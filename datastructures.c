@@ -11,34 +11,34 @@ int main() {
   // linked list
   struct Node {
     int data;
-    struct Node *next;
+    struct Node *right;
+    struct Node *left;
   };
   struct Node *head = NULL;
-  struct Node *second = NULL;
-  struct Node *third = NULL;
+  struct Node *secondRight;
+  struct Node *secondLeft = NULL;
 
   head = (struct Node *)malloc(sizeof(struct Node));
-  second = (struct Node *)malloc(sizeof(struct Node));
-  third = (struct Node *)malloc(sizeof(struct Node));
+  secondRight = (struct Node *)malloc(sizeof(struct Node));
+  secondLeft = (struct Node *)malloc(sizeof(struct Node));
 
   head->data = 1;
-  head->next = second;
+  head->right = secondRight;
 
-  second->data = 1;
-  second->next = third;
+  secondRight->data = 1;
+  secondRight->right = NULL;
 
-  third->data = 1;
-  third->next = NULL;
+  secondLeft->data = 1;
+  secondLeft->left = NULL;
 
   struct Node *current = head;
 
   while (current != NULL) {
     printf("%i", current->data);
-    current = current->next;
   }
   free(head);
-  free(second);
-  free(third);
+  free(secondRight);
+  free(secondLeft);
 
   // Stack
   //
